@@ -57,10 +57,16 @@ const replaceValuesInTemplate = (template, values) => {
   }
 };
 
+// This is how you use it:
+// You call replaceValuesInTemplate() with two parameters:
+// - the first parameter is the template, in this case "{0} items on {1} are of {2}."
+// - the second parameter is an array of replacements, in this case [2, "your basket", "blue"]
 const resolvedTemplate = replaceValuesInTemplate($t("basketLine"), [
   2,
   $t("yourBasket"),
   $t("blue"),
 ]);
 
+// The function will return the template with the values merged in:
+// "2 items on your basket are of blue."
 console.log(resolvedTemplate);
